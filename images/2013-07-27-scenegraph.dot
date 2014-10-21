@@ -1,0 +1,12 @@
+digraph "New Scenegraph" {
+    Context -> Viewport -> Stage -> Renderer [arrowhead=normal];
+    Viewport -> World [arrowhead=empty];
+    World -> Positionable [arrowhead=normal];
+    Viewport -> Camera -> Positionable [arrowhead=empty];
+    Positionable -> Positionable [style=dotted,arrowhead=odiamond];
+    Renderer -> Positionable [style=dotted;arrowhead=none];
+    Renderer -> VBO;
+    Renderer -> Shader [arrowhead=empty];
+    Renderer -> Texture;
+}
+

@@ -1,0 +1,10 @@
+markdown: rdiscount
+pygments: true
+baseurl: /~tiffany/blog
+url: http://lymiahugs.com/~tiffany/blog
+defaults:
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "post"
