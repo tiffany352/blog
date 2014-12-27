@@ -1,7 +1,7 @@
 markdown: rdiscount
 pygments: true
-baseurl: /~tiffany/blog
-url: http://lymiahugs.com/~tiffany/blog
+baseurl: /blog
+url: http://tiffnix.com/blog
 defaults:
   -
     scope:
