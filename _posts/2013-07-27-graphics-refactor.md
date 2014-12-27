@@ -51,7 +51,11 @@ following file list is, roughly, where all the calls would be located:
 The scene graph hierarchy, after all of my planned refactors, will be
 something along these lines:
 
-![Scene Graph](../../../images/2013-07-27-scenegraph.png)
+<!-- Stupid hack because jekyll won't add links to view inline images
+directly:
+[![Scene Graph](../../../images/2013-07-27-scenegraph.png)](../../../images/2013-07-27-scenegraph.png)
+-->
+[![Scene Graph](../../../images/2013-07-27-scenegraph.png)](../../../images/2013-07-27-scenegraph.png)
 
 - Filled in arrows mean a one-to-many relationship
 - Empty arrows mean a one-to-one relationship

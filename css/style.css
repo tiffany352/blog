@@ -16,6 +16,10 @@ body {
     padding: 1em;
 }
 
+#post img {
+    max-width: 100%;
+}
+
 .title {
     border-bottom-style: solid;
     border-bottom-width: 1px;
