@@ -1,5 +1,5 @@
 markdown: rdiscount
-pygments: true
+highlighter: pygments
 baseurl: /blog
 url: http://tiffnix.com/blog
 defaults:

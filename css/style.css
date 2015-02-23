@@ -7,7 +7,7 @@ body {
     padding: 0;
     border-style: solid;
     border-width: 1px;
-    font-family: arial;
+    font-family: sans-serif;
     background-color: #eee;
     color: #002b36;
 }
@@ -23,13 +23,13 @@ body {
 .title {
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    padding: 5px;
+    padding: .5em;
 }
 
 .title a {
     color: #002b36;
     text-decoration: none;
-    margin: 5px;
+    margin: .5em;
 }
 
 .title a:hover, .title a:active, .title a:focus {
@@ -41,7 +41,7 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: georgia;
+    font-family: sans-serif;
 }
 
 code {
