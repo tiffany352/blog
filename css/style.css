@@ -20,16 +20,20 @@ body {
     max-width: 100%;
 }
 
-.title {
+.top_nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    padding: .5em;
+    padding-left: .75em;
+    padding-right: .75em;
 }
 
-.title a {
+.top_nav a {
     color: #002b36;
     text-decoration: none;
-    margin: .5em;
+    margin: .75em;
 }
 
 .title a:hover, .title a:active, .title a:focus {
