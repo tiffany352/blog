@@ -50,7 +50,7 @@ for (const file of dir) {
     const month = date.getMonth().toString().padStart(2, "0");
     const day = date.getDate().toString().padStart(2, "0");
 
-    const url = `/blog/${year}/${month}/${day}/${slug}`;
+    const url = `${year}/${month}/${day}/${slug}`;
 
     const post: Post = {
       title,

@@ -24,11 +24,11 @@
 </style>
 
 <nav>
-  <NavItem text="Home" icon="home" href="/" />
-  <NavItem text="About" icon="info" href="/about" />
+  <NavItem text="Home" icon="home" href="." />
+  <NavItem text="About" icon="info" href="about" />
   <NavItem text="Twitter" icon="twitter" href="https://twitter.com/Tiffnixen" />
   <NavItem text="GitHub" icon="github" href="https://github.com/tiffany352" />
   <NavItem text="Keybase" icon="key" href="https://keybase.io/tiffany" />
   <div class="spacer" />
-  <NavItem text="" icon="rss" href="/atom.xml" />
+  <NavItem text="" icon="rss" href="atom.xml" />
 </nav>

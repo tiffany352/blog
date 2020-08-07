@@ -1,6 +1,6 @@
 <script context="module">
   export function preload({ params, query }) {
-    return this.fetch(`/blog.json`)
+    return this.fetch(`posts.json`)
       .then((r) => r.json())
       .then((rawPosts) => {
         const posts = rawPosts.map((post) => ({

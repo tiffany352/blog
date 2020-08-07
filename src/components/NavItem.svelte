@@ -43,7 +43,7 @@
 
 <a {href} data-highlight={highlight}>
   <svg width="24" height="24">
-    <use href="/icons/nav-icons.svg#{icon}" />
+    <use href="icons/nav-icons.svg#{icon}" />
   </svg>
   {text}
 </a>

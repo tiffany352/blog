@@ -3,7 +3,7 @@
     // the `slug` parameter is available because
     // this file is called [slug].svelte
     const res = await this.fetch(
-      `blog/${params.year}/${params.month}/${params.day}/${params.slug}.json`
+      `${params.year}/${params.month}/${params.day}/${params.slug}.json`
     );
     const data = await res.json();
 
