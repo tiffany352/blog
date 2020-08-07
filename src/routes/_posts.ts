@@ -55,7 +55,7 @@ for (const file of dir) {
   if (result) {
     const date = new Date(
       parseInt(result[1]),
-      parseInt(result[2]),
+      parseInt(result[2]) - 1,
       parseInt(result[3])
     );
     const slug = result[4];
@@ -70,7 +70,7 @@ for (const file of dir) {
     const html = titleResults ? titleResults[2] : initHtml;
 
     const year = date.getFullYear();
-    const month = date.getMonth().toString().padStart(2, "0");
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const day = date.getDate().toString().padStart(2, "0");
 
     const url = `${year}/${month}/${day}/${slug}`;
