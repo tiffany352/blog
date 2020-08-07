@@ -5,14 +5,26 @@
 </script>
 
 <style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
   main {
-    max-width: 40em;
+    width: 40em;
+    max-width: 100%;
     padding: 0;
-    border-style: solid;
-    border-width: 1px;
     font-family: "Segoe UI", "San Francisco", sans-serif;
     background-color: #eee;
-    font-size: 20px;
+  }
+
+  @media screen and (min-width: 40em) {
+    main {
+      margin: 1em;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
   }
 
   article {
@@ -20,9 +32,11 @@
   }
 </style>
 
-<main>
-  <Nav {segment} />
-  <article>
-    <slot />
-  </article>
-</main>
+<div class="container">
+  <main>
+    <Nav {segment} />
+    <article>
+      <slot />
+    </article>
+  </main>
+</div>

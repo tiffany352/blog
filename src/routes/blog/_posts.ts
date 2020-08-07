@@ -39,11 +39,12 @@ for (const file of dir) {
 
     const content = fs.readFileSync(`./posts/${file}`, { encoding: "utf8" });
 
-    const titleRegex = /^\#\s*(.*)$/m;
-    const titleResults = titleRegex.exec(content);
-    const title = titleResults ? titleResults[1] : "Untitled";
+    const initHtml = md.render(content);
 
-    const html = md.render(content);
+    const titleRegex = /^<h1>(.*)<\/h1>(.*)$/s;
+    const titleResults = titleRegex.exec(initHtml);
+    const title = titleResults ? titleResults[1] : "Untitled";
+    const html = titleResults ? titleResults[2] : initHtml;
 
     const year = date.getFullYear();
     const month = date.getMonth().toString().padStart(2, "0");
