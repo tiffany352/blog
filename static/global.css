@@ -47,6 +47,7 @@ a:focus {
   border: 1px solid rgb(0, 0, 0);
   border-radius: 8px;
   color: var(--text);
+  overflow-x: auto;
 
   --bright: rgb(223, 236, 31);
   --number: rgb(231, 75, 75);
@@ -61,6 +62,12 @@ a:focus {
   --quote: rgb(172, 172, 172);
   --addition: rgb(223, 236, 31);
   --deletion: rgb(152, 13, 177);
+}
+
+@media screen and (max-width: 500px) {
+  .hljs {
+    margin: 0 -0.5em;
+  }
 }
 
 .line {
