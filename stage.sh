@@ -1,2 +1,2 @@
 #!/bin/bash
-scp -r _site/* chibi:/var/www/sites/tiffnix.com/blog
+scp -r _site/* himawari:/home/tiffany/public_html/blog
