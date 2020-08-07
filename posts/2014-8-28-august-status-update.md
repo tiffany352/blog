@@ -19,7 +19,7 @@ command line arguments as part of your own code, as you own `main()`. In order t
 the demos use `main()`: `demos/main.c`.
 
 The renderer has been updated from the typeclass-based version presented in
-[Graphics Refactor Plans](../../../2013/07/27/graphics-refactor.html). It now uses a
+[Graphics Refactor Plans](/blog/2013/07/27/graphics-refactor). It now uses a
 [Data-Oriented](http://www.dataorienteddesign.com/dodmain/) design which allows for much better performance, reducing
 state invalidation, and reducing boiler plate; Previously, boilerplate was required to implement useless methods like
 `get_storage()` and `get_complete()`. This approach has convinced me that Data Oriented Design is the paradigm I should
