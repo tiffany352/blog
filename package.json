@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build",
-    "export": "sapper export",
+    "export": "sapper export --basepath blog --host tiffnix.com",
+    "deploy": "scp -r __sapper__/export/blog himawari:public_html/",
+    "serve": "serve __sapper__/export",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
