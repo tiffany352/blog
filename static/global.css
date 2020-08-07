@@ -1,0 +1,44 @@
+body {
+  background-color: #212121;
+}
+
+.site {
+  max-width: 60em;
+  padding: 0;
+  border-style: solid;
+  border-width: 1px;
+  font-family: sans-serif;
+  background-color: #eee;
+  color: #002b36;
+}
+
+#post {
+  padding: 1em;
+}
+
+#post img {
+  max-width: 100%;
+}
+
+.title a:hover,
+.title a:active,
+.title a:focus {
+  text-decoration: underline;
+}
+
+h1 {
+  color: #cb4b16;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+}
+
+code {
+  font-family: monospace;
+}
