@@ -14,6 +14,7 @@ import hljsSvelte from "highlightjs-svelte";
 
 export interface Post {
   title: string;
+  summary: string;
   date: Date;
   slug: string;
   url: string;
@@ -69,6 +70,21 @@ for (const file of dir) {
     const title = titleResults ? titleResults[1] : "Untitled";
     const html = titleResults ? titleResults[2] : initHtml;
 
+    const firstParaRegex = /<p>(.*?)<\/p>/s;
+    const firstParaResult = firstParaRegex.exec(html);
+    const firstPara = firstParaResult
+      ? firstParaResult[1]
+      : "Description not available.";
+    const firstParaStripped = firstPara
+      .replace(/<(\w+).*?>(.*?)<\/\1>/gs, (substr, arg1, arg2) => arg2)
+      .replace(/(\s+)/gs, " ");
+
+    const summaryRegex = /(.*?\.)/;
+    const summaryResults = summaryRegex.exec(firstParaStripped);
+    const summary = summaryResults
+      ? summaryResults[1]
+      : "Description not available.";
+
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const day = date.getDate().toString().padStart(2, "0");
@@ -81,6 +97,7 @@ for (const file of dir) {
       slug,
       url,
       html,
+      summary,
     };
     posts.push(post);
   }

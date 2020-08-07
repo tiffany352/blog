@@ -31,6 +31,15 @@
 
 <svelte:head>
   <title>{post.title}</title>
+
+  <meta property="og:title" content={post.title} />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content={post.summary} />
+  <meta property="og:site_name" content="Tiffany's Blog" />
+  <meta property="og:article:published_time" content={post.date} />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@Tiffnixen" />
 </svelte:head>
 
 <h1>{post.title}</h1>

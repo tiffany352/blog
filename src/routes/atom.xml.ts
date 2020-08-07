@@ -14,6 +14,7 @@ function createEntry(post: Post) {
       <link href="https://tiffnix.com/blog/${post.url}" />
       <updated>${post.date.toISOString()}</updated>
       <id>https://tiffnix.com/blog/${post.url}</id>
+      <summary>${post.summary}</summary>
       <content type="html">${safeHtml}</content>
     </entry>`;
 }

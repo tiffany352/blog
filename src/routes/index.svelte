@@ -16,13 +16,38 @@
   export let posts;
 
   const format = new Intl.DateTimeFormat(undefined, {
-    dateStyle: "medium",
+    dateStyle: "long",
   });
 
   const sortedPosts = [...posts]
     .sort((a, b) => b.date - a.date)
     .filter((post) => !post.slug.startsWith("test"));
 </script>
+
+<style>
+  .date {
+    color: rgb(100, 100, 100);
+    margin: 0.5em 0;
+    font-size: 0.9em;
+  }
+
+  .post {
+    border-top: 1px dashed rgb(90, 90, 90);
+  }
+
+  h3 {
+    margin-bottom: 0.25em;
+  }
+
+  blockquote {
+    font-style: italic;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+</style>
 
 <svelte:head>
   <title>Tiffany Bennett</title>
@@ -47,12 +72,13 @@
 </ul>
 
 <h2>Posts</h2>
-<ul class="posts">
-  {#each sortedPosts as post}
-    <li>
-      <span>{format.format(post.date)}</span>
-      &raquo;
-      <a href={post.url}>{post.title}</a>
-    </li>
-  {/each}
-</ul>
+
+{#each sortedPosts as post}
+  <div class="post">
+    <a href={post.url}>
+      <h3>{post.title}</h3>
+    </a>
+    <p class="date">{format.format(post.date)}</p>
+    <blockquote>{post.summary}</blockquote>
+  </div>
+{/each}
