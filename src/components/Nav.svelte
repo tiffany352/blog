@@ -23,5 +23,4 @@
   <a href="https://twitter.com/Tiffnixen">Twitter</a>
   <a href="https://github.com/tiffany352">GitHub</a>
   <a href="https://keybase.io/tiffany">Keybase</a>
-  <a href="https://rinkcalc.app/">Rink</a>
 </nav>

@@ -2,8 +2,10 @@ import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import commonjs from "@rollup/plugin-commonjs";
 import svelte from "rollup-plugin-svelte";
-import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
+import typescript from "rollup-plugin-typescript2";
+import preprocess from "svelte-preprocess";
+import json from "@rollup/plugin-json";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
 
@@ -29,36 +31,17 @@ export default {
         dev,
         hydratable: true,
         emitCss: true,
+        preprocess: preprocess(),
       }),
+      typescript({
+        typescript: require("typescript"),
+      }),
+      json(),
       resolve({
         browser: true,
         dedupe: ["svelte"],
       }),
       commonjs(),
-
-      legacy &&
-        babel({
-          extensions: [".js", ".mjs", ".html", ".svelte"],
-          babelHelpers: "runtime",
-          exclude: ["node_modules/@babel/**"],
-          presets: [
-            [
-              "@babel/preset-env",
-              {
-                targets: "> 0.25%, not dead",
-              },
-            ],
-          ],
-          plugins: [
-            "@babel/plugin-syntax-dynamic-import",
-            [
-              "@babel/plugin-transform-runtime",
-              {
-                useESModules: true,
-              },
-            ],
-          ],
-        }),
 
       !dev &&
         terser({
@@ -81,7 +64,12 @@ export default {
       svelte({
         generate: "ssr",
         dev,
+        preprocess: preprocess(),
       }),
+      typescript({
+        typescript: require("typescript"),
+      }),
+      json(),
       resolve({
         dedupe: ["svelte"],
       }),

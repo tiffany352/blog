@@ -1,9 +1,4 @@
----
-layout: post
-title: August Status Update
----
-
-# {{page.title}}
+# August Status Update
 
 It's been a few months since my last post and a lot about how IntenseLogic works and how I design software has changed.
 
@@ -19,7 +14,7 @@ IntenseLogic is now a set of libraries, rather than what would really be conside
 possible, some code changes and simplifications took place. In particular, the engine had to stop taking ownership of
 the main thread. This meant removing the `libevent` dependency, removing async events from the event system, and
 exposing a function to poll for SDL events as part of the input library. Because of this, it is now far easier to handle
-command line arguments as part of your own code, as you own `main()`.  In order to use IL, you must now make your own
+command line arguments as part of your own code, as you own `main()`. In order to use IL, you must now make your own
 `main()`, and one is provided as `examples/main.c` and `examples/main.cpp`. It may also be of interest to examine how
 the demos use `main()`: `demos/main.c`.
 

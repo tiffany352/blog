@@ -1,9 +1,4 @@
----
-layout: post
-title: Replacing the file-system in an operating system
----
-
-# {{page.title}}
+# Replacing the file-system in an operating system
 
 One thing that has always complicated application development and
 slowed down startup times, and is especially important in the mobile
@@ -18,10 +13,10 @@ already running.
 Before you call me crazy, I will attempt to explain myself. Think
 about what we use a filesystem for:
 
-* Cached files and other miscellanea.
-* User data that survives between "sessions" (which are rarely
+- Cached files and other miscellanea.
+- User data that survives between "sessions" (which are rarely
   considered, and is usually attributed as a property of a process).
-* Modification and introspection by other programs.
+- Modification and introspection by other programs.
 
 Now, you ask, what is it I want to use to replace the file system
 with? Well, think about it for a second. What do we have in nearly
@@ -43,7 +38,7 @@ at?
 A tightly coupled operating system and language, in which there is no
 filesystem; There are discrete "Sessions" or similar, in which act
 like a heterogeneous, introspectable pool of native resources for an
-application.  With all of this, the user would never have to worry
+application. With all of this, the user would never have to worry
 about parsing image files, or have to worry about startup
 time. Starting a program would consist of mapping the pool of
 resources into memory, and calling a function to notify the program

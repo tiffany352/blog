@@ -11,6 +11,12 @@
     <!-- This blog probably doesn't need to be a PWA -->
     <!--link rel="manifest" href="manifest.json" crossorigin="use-credentials" /-->
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="Atom Feed for tiffnix.com"
+      href="/atom.xml"
+    />
 
     <!-- Sapper generates a <style> tag containing critical CSS
         for the current page. CSS for the rest of the app is
@@ -24,7 +30,7 @@
   <body>
     <!-- The application will be rendered inside this element,
                 because `src/client.js` references it -->
-    <div id="sapper" class="site">%sapper.html%</div>
+    <div id="sapper">%sapper.html%</div>
 
     <!-- Sapper creates a <script> tag containing `src/client.js`
                     and anything else it needs to hydrate the app and

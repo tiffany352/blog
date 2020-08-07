@@ -6,17 +6,23 @@
 
 <style>
   main {
-    position: relative;
-    max-width: 56em;
-    background-color: white;
-    padding: 2em;
-    margin: 0 auto;
-    box-sizing: border-box;
+    max-width: 40em;
+    padding: 0;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Segoe UI", "San Francisco", sans-serif;
+    background-color: #eee;
+    font-size: 20px;
+  }
+
+  article {
+    padding: 1em;
   }
 </style>
 
-<Nav {segment} />
-
 <main>
-  <slot />
+  <Nav {segment} />
+  <article>
+    <slot />
+  </article>
 </main>

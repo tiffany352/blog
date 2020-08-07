@@ -1,9 +1,4 @@
----
-layout: post
-title: Refactoring Legacy Code
----
-
-# {{page.title}}
+# Refactoring Legacy Code
 
 I've taken up maintaining a project that my friend Darkflux works
 on. It's called Fate of the Republic (FotR), a Star-Wars
@@ -57,12 +52,12 @@ So what makes this a legacy code-base?
 - Screwed up control flow in many places, which makes the code hard to
   decipher
 - Massive code duplication
-  * Commands are only passed a string for the stuff that came after
+  - Commands are only passed a string for the stuff that came after
     the command, and they have to parse the contents themselves
-  * Have to manually check if the character which ran the command is
+  - Have to manually check if the character which ran the command is
     allowed to, or capable of (doing stuff while sleeping, while dead,
     preventing NPCs from running certain commands, and so on)
-  * There's some utility functions for this, but there's different
+  - There's some utility functions for this, but there's different
     utility functions for different files, and some of them are
     straight up duplicated (`smash_tilde()` vs `smush_tilde()` - they
     do the exact same thing).
@@ -115,8 +110,7 @@ string literals). The only warning I could not fit was
 was called on a format string before passing it to a `*printf`
 function. There doesn't seem to be a way to even massage the code to
 make the warning go away, so I simply disabled that warning. The code
-now compiles with no warnings or errors under `-Wall -Wextra
--pedantic-errors -pedantic -Wno-format-security -Werror`.
+now compiles with no warnings or errors under `-Wall -Wextra -pedantic-errors -pedantic -Wno-format-security -Werror`.
 
 `mud.h`, the primary header file which is eighteen thousand lines
 long, was reorganized so it is easier to find declarations - the file
@@ -171,7 +165,7 @@ cutting concerns, and generally make it easier to change stuff without
 having to recompile the MUD.
 
 I suspect a proper command parser would simplify away at least 20 000
-lines of code from the MUD. For example, *more than half* of the quest
+lines of code from the MUD. For example, _more than half_ of the quest
 system's thousand lines of code is the `do_quest` command, which just
 makes checks like if the runner of the command isn't an NPC, if the
 runner of the command can offer quests, and so on.
@@ -242,7 +236,7 @@ characters in any serialized strings (which means you cannot set your
 character's description to "kawaii desu~"). Records are terminated
 with a `$` character on its own line. Usually, a file will consist of
 all of the entries of that type in the entire game, each ending with a
-`$`, and finally ending the file with a $. Encountering an `EOF` is
+`$`, and finally ending the file with a \$. Encountering an `EOF` is
 therefore a bug, and is sometimes reported, and almost always
 recovered from. Encountering an `EOF` can be caused by a file being
 empty, which it shouldn't be, or a file being unfinished, as would be

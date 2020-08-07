@@ -1,13 +1,8 @@
----
-layout: post
-title: Experiences in Multi-Threading
----
-
-# {{page.title}}
+# Experiences in Multi-Threading
 
 ## IntenseLogic and Motivations
 
-IntenseLogic is the game engine that I've been working on for nearly two years. It has a long history of me changing things to make sure the internals are sound. In the choice of "cheap, fast, sane, quick to develop: Pick 3" I picked everything but quick to develop. 
+IntenseLogic is the game engine that I've been working on for nearly two years. It has a long history of me changing things to make sure the internals are sound. In the choice of "cheap, fast, sane, quick to develop: Pick 3" I picked everything but quick to develop.
 
 I recently started getting sick of the annoying limitations that were being introduced by trying to run asynchronous timers in addition to rendering on the same thread. The problem lies in SwapBuffers(): The only way to implement vsync properly is for SwapBuffers to block, which prevents the asynchronous timers the rest of the engine uses to fire properly, and the CPU ends up starving. The hack I had been using up to this point was to set the async flag so that SwapBuffers wouldn't block (which, by the way, your GPU driver control panel can override), and then implemented my own rate limiter (which was arbitrarily chosen as 60 fps, because there's no way to query the FPS limit of a window, in GLFW at least).
 
@@ -50,4 +45,3 @@ Message passing is the default communication primitive in languages like Rust an
 The bad reputation of threading comes from languages like Java, Delphi, C++, where the default reaction to inter-thread communication is mutexes and shared memory. This is the wrong way to approach the problem, and I'm not going to go into why in this post.
 
 I by no means say that it is something you should throw everything at and expect it to work just fine, you still have to think carefully about interactions between threads.
-

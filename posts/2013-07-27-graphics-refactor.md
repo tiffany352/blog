@@ -1,9 +1,4 @@
----
-layout: post
-title: Graphics Refactor Plans
----
-
-# {{page.title}}
+# Graphics Refactor Plans
 
 Instead of the current setup in which rendering for an object fails if
 the drawable, texture, or material have any sort of mismatch, there
@@ -55,6 +50,7 @@ something along these lines:
 directly:
 [![Scene Graph](../../../images/2013-07-27-scenegraph.png)](../../../images/2013-07-27-scenegraph.png)
 -->
+
 [![Scene Graph](../../../images/2013-07-27-scenegraph.png)](../../../images/2013-07-27-scenegraph.png)
 
 - Filled in arrows mean a one-to-many relationship
@@ -63,22 +59,22 @@ directly:
 - Empty diamonds mean 1:1 or 1:0
 - Dotted lines mean that the handle is an int rather than a pointer
 
-* * *
+---
 
-* Contexts manage the global OpenGL state. They contain bits of
+- Contexts manage the global OpenGL state. They contain bits of
   information, such as currently bound objects, the active viewport,
   and the window size.
-* Viewports manages rendering of scenes, and contain a number of
+- Viewports manages rendering of scenes, and contain a number of
   stages. They can be used to implement in-game security cameras and
   such.
-* Stages represent one pass of rendering, such as for deferred shading
+- Stages represent one pass of rendering, such as for deferred shading
   or HDR tonemapping.
-* Renderers are all of the data needed to render an object - VBOs,
+- Renderers are all of the data needed to render an object - VBOs,
   shaders, textures, uniforms.
-* Worlds are 3-dimensional spaces containing objects and other
+- Worlds are 3-dimensional spaces containing objects and other
   information for describing the world - this is shared by both
   graphics and physics.
-* Positionable are objects that can be positioned in the world.
-* Cameras are the point of view for the Viewport, and contain
+- Positionable are objects that can be positioned in the world.
+- Cameras are the point of view for the Viewport, and contain
   information like the projection matrix and position/rotation of the
   viewer.
