@@ -32,7 +32,8 @@ function createFeed(posts: Post[]) {
 
   const sortedPosts = posts
     .slice()
-    .sort((a: Post, b: Post) => b.date.getTime() - a.date.getTime());
+    .sort((a: Post, b: Post) => b.date.getTime() - a.date.getTime())
+    .filter((post) => !post.slug.startsWith("test"));
 
   const entries = sortedPosts.map(createEntry).join("");
 

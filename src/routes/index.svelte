@@ -19,7 +19,9 @@
     dateStyle: "medium",
   });
 
-  const sortedPosts = [...posts].sort((a, b) => b.date - a.date);
+  const sortedPosts = [...posts]
+    .sort((a, b) => b.date - a.date)
+    .filter((post) => !post.slug.startsWith("test"));
 </script>
 
 <svelte:head>
