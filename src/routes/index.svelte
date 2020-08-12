@@ -62,7 +62,7 @@
     a tool for doing calculations with units.
   </li>
   <li>
-    <a href="https://tiffnix.com/unicode/">Unicode Visualizer</a>,
+    <a href="https://unicode.link/">Unicode Visualizer</a>,
     a web app for viewing the breakdown of Unicode strings.
   </li>
   <li>
