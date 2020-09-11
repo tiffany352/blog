@@ -17,8 +17,9 @@
 </p>
 
 <p>
-  The most popular hobby project I’ve made to date is
-  <a href="https://rinkcalc.app">Rink</a>
-  - a dimensionality analysis tool and unit-based calculator that’s useful for
-  answering tons of different questions.
+  The most popular hobby project I’ve made to date is <a
+    href="https://rinkcalc.app">Rink</a> - a dimensionality analysis tool and unit-based
+  calculator that’s useful for answering tons of different questions.
 </p>
+
+<p>Some additional information can be found on my <a href="wiki">Wiki</a>.</p>

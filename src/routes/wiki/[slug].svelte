@@ -2,9 +2,7 @@
   export async function preload({ params, query }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
-    const res = await this.fetch(
-      `${params.year}/${params.month}/${params.day}/${params.slug}.json`
-    );
+    const res = await this.fetch(`wiki/${params.slug}.json`);
 
     if (res.status === 200) {
       const data = await res.json();
@@ -36,7 +34,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:description" content={post.summary} />
   <meta property="og:site_name" content="Tiffany's Blog" />
-  <meta property="og:article:published_time" content={post.date} />
+  <meta property="og:article:modified_time" content={post.date} />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@Tiffnixen" />
@@ -44,6 +42,6 @@
 
 <h1>{post.title}</h1>
 
-<span class="date">{format.format(new Date(post.date))}</span>
+<span class="date">Last Updated: {format.format(new Date(post.updated))}</span>
 
 {@html post.html}

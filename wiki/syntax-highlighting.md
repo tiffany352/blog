@@ -1,7 +1,8 @@
-# Syntax Highlighting Test
+# Syntax Highlighting
 
-This page isn't supposed to be linked to from anywhere on the site. It's
-just for testing my custom css for highlight.js.
+This page has test cases for my custom highlightjs theme.
+
+The theme is freely available under the CC-BY license. [Link to CSS](hljs.css).
 
 ```diff
 + foo
